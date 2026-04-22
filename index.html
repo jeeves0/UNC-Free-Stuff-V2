@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Find UNC Chapel Hill events with free food, snacks, merch, and giveaways." />
+  <title>UNC Free Stuff Finder</title>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>UNC Free Stuff Finder</h1>
+      <p class="subtitle">Free food, snacks, merch and giveaways at UNC-Chapel Hill</p>
+      <p class="last-updated" id="last-updated">Loading events...</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="controls">
+      <div class="filter-group">
+        <span class="filter-label">Filter:</span>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="food">Food</button>
+        <button class="filter-btn" data-filter="merch">Merch</button>
+        <button class="filter-btn" data-filter="giveaway">Giveaway</button>
+      </div>
+
+      <div class="view-toggle">
+        <button id="btn-calendar" class="active">Calendar</button>
+        <button id="btn-list">List</button>
+      </div>
+    </div>
+
+    <div id="calendar-container">
+      <div id="calendar"></div>
+    </div>
+
+    <div id="list-container" class="hidden">
+      <div id="events-list"></div>
+    </div>
+  </main>
+
+  <div id="modal-overlay" class="hidden"></div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true"
+       aria-labelledby="modal-title" tabindex="-1">
+    <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <img id="modal-photo" src="" alt="" class="modal-photo hidden" />
+    <h2 id="modal-title"></h2>
+    <p id="modal-datetime" class="modal-meta"></p>
+    <p id="modal-location" class="modal-meta"></p>
+    <div id="modal-description" class="modal-description"></div>
+    <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer"
+       class="modal-link hidden">View on UNC Events</a>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
